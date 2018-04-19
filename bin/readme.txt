@@ -1,9 +1,9 @@
 /******************************************************************************
- *  Name:     
+ *  Name: David Jones & Mason Parry     
  *  NetID:    
  *  Precept:  
  *
- *  Partner Name:     
+ *  Partner Name: Mason Parry & David Jones   
  *  Partner NetID:    
  *  Partner Precept:  
  *
@@ -36,11 +36,14 @@ Programming Assignment 6: WordNet
  *  number of edges E in the digraph?
  *****************************************************************************/
 
-Description:
+Description: It uses DepthFirstOrder class to sort the graph in post order. It then
+grabs the first item on the newly sorted array and checks to see if that the selected vertex
+has anything pointing to it. If it doesn't then we are at the root of the digraph, if it has
+outdegrees then we determine that the graph isn't rooted.
 
 
 
-Order of growth of running time:
+Order of growth of running time: O(E+V)
 
 
 /******************************************************************************
@@ -58,19 +61,23 @@ Order of growth of running time:
  *  edgeTo[], and distTo[] arrays.
  *****************************************************************************/
 
-Description:
+Description: In the ancestor method it keeps track of two boolean arrays and keep track
+	of what vertices have been visited by what vertex we started with. First it loops through
+	the adjacent vertices of vertex v and then marks areas much like DFS. Then it goes through
+	the adjacent vertices of vertex w and then checks to see if the vertices have already been marked
+	for the v vertex, if so then we found the shortest common ancestor.
 
                                               running time
 method                               best case            worst case
 ------------------------------------------------------------------------
-length(int v, int w)
+length(int v, int w)				   O(1) 		      O(E + V * 2)
 
-ancestor(int v, int w)
+ancestor(int v, int w)                 O(1)               O(E + V * 2)
 
-length(Iterable<Integer> v,
+length(Iterable<Integer> v,          O(E + V)            O((E + V) * 2N)
        Iterable<Integer> w)
 
-ancestor(Iterable<Integer> v,
+ancestor(Iterable<Integer> v,        O(E + V)            O((E + V) * 2N)
          Iterable<Integer> w)
 
 
@@ -99,7 +106,8 @@ ancestor(Iterable<Integer> v,
  *  the protocol as described on the assignment page. Give one
  *  sentence explaining what each of you contributed.
  *****************************************************************************/
-
+	Mason implemented Wordnet and David implemented SAP. We both worked together on
+	Outcast and helped each other whenever needed.
 
 
 
