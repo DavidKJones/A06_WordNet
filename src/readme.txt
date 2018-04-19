@@ -1,9 +1,9 @@
 /******************************************************************************
- *  Name:     
+ *  Name: David Jones & Mason Parry
  *  NetID:    
  *  Precept:  
  *
- *  Partner Name:     
+ *  Partner Name: Mason Parry & David Jones
  *  Partner NetID:    
  *  Partner Precept:  
  *
@@ -18,14 +18,19 @@ Programming Assignment 6: WordNet
  *  Describe concisely the data structure(s) you used to store the 
  *  information in synsets.txt. Why did you make this choice?
  *****************************************************************************/
-
+We used two symbol tables for synsets.txt. One is for looking up a noun based on
+a number and the other is vice versa with a number if found based on the noun. 
+It was important to be able go from noun to an integer so that we can find the
+distance from one noun to another. And it was also important to go the other way
+so you can check whether or not a noun existed in the symbol table fast. 
 
 
 /******************************************************************************
  *  Describe concisely the data structure(s) you used to store the 
  *  information in hypernyms.txt. Why did you make this choice?
  *****************************************************************************/
-
+We used a Digraph because the synsets we directional and we needed a way to
+connect sysnsets together.
 
 
 /******************************************************************************
@@ -79,7 +84,7 @@ ancestor(Iterable<Integer> v,
 /******************************************************************************
  *  Known bugs / limitations.
  *****************************************************************************/
-
+the provided synsets.txt is missing a lot of common nouns.
 
 /******************************************************************************
  *  Describe whatever help (if any) that you received.
@@ -87,7 +92,7 @@ ancestor(Iterable<Integer> v,
  *  include any help from people (including course staff, lab TAs,
  *  classmates, and friends) and attribute them by name.
  *****************************************************************************/
-
+We helped each other.
 
 /******************************************************************************
  *  Describe any serious problems you encountered.                    
