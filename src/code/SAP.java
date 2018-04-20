@@ -90,6 +90,26 @@ public class SAP
 	   if(v < 0 || v > graph.V() - 1) throw new IndexOutOfBoundsException("'v' needs to be a value between 0 and " + (graph.V() - 1));
 	   if(w < 0 || w > graph.V() - 1) throw new IndexOutOfBoundsException("'w' needs to be a value between 0 and " + (graph.V() - 1));
 	   
+	   /*BreadthFirstDirectedPaths vPaths = new BreadthFirstDirectedPaths(graph, v);
+	   BreadthFirstDirectedPaths wPaths = new BreadthFirstDirectedPaths(graph, w);
+	   int minDistance = Integer.MAX_VALUE;
+	   
+	   for(int i = 0; i < graph.V(); i++)
+	   {
+		   int dist = -1;
+		   if(wPaths.hasPathTo(i) && vPaths.hasPathTo(i))
+		   {
+			   dist = wPaths.distTo(i) + vPaths.distTo(i);
+		   }
+		   
+		   if(minDistance > dist && dist != -1)
+		   {
+			   minDistance = dist;
+		   }
+	   }
+	   
+	   return minDistance == Integer.MAX_VALUE ? -1 : minDistance;*/
+	   
 	   Queue<Integer> q = new Queue<Integer>();
        boolean[] vMarked = new boolean[graph.V()];
        boolean[] wMarked = new boolean[graph.V()];
@@ -149,6 +169,28 @@ public class SAP
    {
 	   if(v < 0 || v > graph.V() - 1) throw new IndexOutOfBoundsException("'v' needs to be a value between 0 and " + (graph.V() - 1));
 	   if(w < 0 || w > graph.V() - 1) throw new IndexOutOfBoundsException("'w' needs to be a value between 0 and " + (graph.V() - 1));
+	   
+	   /*BreadthFirstDirectedPaths vPaths = new BreadthFirstDirectedPaths(graph, v);
+	   BreadthFirstDirectedPaths wPaths = new BreadthFirstDirectedPaths(graph, w);
+	   int minDistance = Integer.MAX_VALUE;
+	   int ancestor = -1;
+	   
+	   for(int i = 0; i < graph.V(); i++)
+	   {
+		   int dist = -1;
+		   if(wPaths.hasPathTo(i) && vPaths.hasPathTo(i))
+		   {
+			   dist = wPaths.distTo(i) + vPaths.distTo(i);
+		   }
+		   
+		   if(minDistance > dist && dist != -1)
+		   {
+			   minDistance = dist;
+			   ancestor = i;
+		   }
+	   }
+	   
+	   return ancestor;*/
 	   
        Queue<Integer> q = new Queue<Integer>();
        boolean[] vMarked = new boolean[graph.V()];

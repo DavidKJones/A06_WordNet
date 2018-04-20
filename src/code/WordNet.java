@@ -92,8 +92,9 @@ public class WordNet
 	//unit testing
 	public static void main(String[] args)
 	{
-		WordNet wn = new WordNet(args[0], args[1]);
-		StdOut.println("Distnace between "+args[2]+" and "+args[3]+" is "+wn.distance(args[2], args[3]));
-		StdOut.println("The sysnset between "+args[2]+" and "+args[3]+" is: "+wn.sap(args[2], args[3]));
+		WordNet wn = new WordNet("","");
+		//WordNet wn = new WordNet(args[0], args[1]);
+		//StdOut.println("Distnace between "+args[2]+" and "+args[3]+" is "+wn.distance(args[2], args[3]));
+		//StdOut.println("The sysnset between "+args[2]+" and "+args[3]+" is: "+wn.sap(args[2], args[3]));
 	}
 }

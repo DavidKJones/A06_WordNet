@@ -25,14 +25,17 @@ public class Outcast
 		
 		for(String n : nouns)
 		{
+			int distance = 0;
 			for(String m : nouns)
 			{
-				int distance = wordnet.distance(n, m);
-				if(largestDistance < distance)
-				{
-					largestDistance = distance;
-					outcast = n;
-				}
+				if(!n.equals(m))
+					distance += wordnet.distance(n, m);	
+			}
+			
+			if(distance > largestDistance)
+			{
+				largestDistance = distance;
+				outcast = n;
 			}
 		}
 		
@@ -42,7 +45,7 @@ public class Outcast
 	// see test client below
 	public static void main(String[] args)
 	{
-	    WordNet wordnet = new WordNet(args[0], args[1]);
+	    WordNet wordnet = new WordNet(args[0], args[1]);	    
 	    Outcast outcast = new Outcast(wordnet);
 	    for (int t = 2; t < args.length; t++) {
 	        In in = new In(args[t]);
